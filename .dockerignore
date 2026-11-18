@@ -1,0 +1,11 @@
+.git
+.idea
+.venv
+__pycache__
+*.py[cod]
+data/raw
+data/cache
+data/reports
+data/metadata.sqlite3*
+tests
+.env

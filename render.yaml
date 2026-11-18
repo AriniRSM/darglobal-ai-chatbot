@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: darglobal-ai-assistant
+    runtime: docker
+    plan: free
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: openrouter/free
+      - key: CHROMA_PATH
+        value: chroma_db
+      - key: METADATA_DB
+        value: data/metadata.sqlite3
+      - key: EMBEDDING_MODEL
+        value: sentence-transformers/all-MiniLM-L6-v2
