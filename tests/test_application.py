@@ -39,6 +39,7 @@ class ApplicationTests(unittest.TestCase):
             (source_dir / "page.html").write_bytes(SAMPLE)
             fake_store = FakeStore()
             with patch.object(pipeline, "RAW_DIR", root), \
+                 patch.object(pipeline, "STRUCTURED_DIR", root / "scraped"), \
                  patch.object(pipeline, "_store", return_value=fake_store), \
                  patch.object(pipeline.metadata_store, "existing_hash", return_value=None), \
                  patch.object(pipeline.metadata_store, "record") as record, \

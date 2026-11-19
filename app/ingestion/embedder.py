@@ -1,10 +1,11 @@
 """Sentence Transformers adapter implementing LangChain's Embeddings interface."""
 import os
 from langchain_core.embeddings import Embeddings
+from sentence_transformers import SentenceTransformer
+
 
 class LocalSentenceEmbeddings(Embeddings):
     def __init__(self, model_name=None):
-        from sentence_transformers import SentenceTransformer
         self.model_name = model_name or os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
         self.model = SentenceTransformer(self.model_name, device="cpu")
 

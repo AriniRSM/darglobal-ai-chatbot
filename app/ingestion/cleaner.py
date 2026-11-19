@@ -3,6 +3,24 @@ from __future__ import annotations
 import json
 import re
 from bs4 import BeautifulSoup
+import html
+import unicodedata
+
+
+def clean_text(value: str) -> str:
+    """Normalize scraped text, discard repeated interface noise, keep facts and row breaks."""
+    value = html.unescape(value or "")
+    value = unicodedata.normalize("NFKC", value).replace("\u00a0", " ").replace("\u200b", "")
+    value = re.sub(r"(?i)\binvestor relations\s+about investors corporate governance\b", " ", value)
+    value = re.sub(r"(?i)\b(?:learn more|view data|all years)\b", " ", value)
+    lines, previous = [], None
+    for raw_line in value.replace("\r", "\n").splitlines():
+        line = re.sub(r"[\t\f\v ]+", " ", raw_line).strip(" \t|·•")
+        if not line or line.casefold() in {"share", "about investors corporate governance"} or line == previous:
+            continue
+        lines.append(line)
+        previous = line
+    return "\n".join(lines).strip()
 
 def _jsonld_values(soup):
     values = []
@@ -31,7 +49,7 @@ def extract_document(html: bytes, source: str, source_url: str) -> dict:
     for element in soup.select("script,style,noscript,svg,nav,footer,header,form"):
         element.decompose()
     main = soup.select_one("main") or soup.select_one("article") or soup.body or soup
-    text = re.sub(r"\s+", " ", main.get_text(" ", strip=True)).strip()
+    text = clean_text(main.get_text(" ", strip=True))
     if len(text) < 80:
         raise ValueError("Page has too little readable text to index")
     # Only trust explicit structured-data keys; missing or unparseable fields stay null.

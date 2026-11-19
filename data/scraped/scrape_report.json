@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-11-19T08:51:00+00:00",
+  "results": [
+    {
+      "source": "DarGlobal",
+      "status": "no_accessible_content",
+      "discovered_pages": 40,
+      "record_count": 0,
+      "errors": [
+        "Official projects directory returned an anti-bot interstitial; no bypass attempted.",
+        "Anti-bot interstitial detected; stopped without attempting to bypass it."
+      ]
+    },
+    {
+      "source": "DarGlobal (Quara public news)",
+      "status": "completed",
+      "discovered_pages": 1,
+      "record_count": 3,
+      "errors": []
+    },
+    {
+      "source": "Wasalt public company profile (Quara Holding)",
+      "status": "completed",
+      "discovered_pages": 1,
+      "record_count": 1,
+      "note": "Profile facts and service descriptions came from Quara Holding; no Wasalt listing pages or listing details were fetched."
+    },
+    {
+      "source": "REGA FAL platform directory",
+      "status": "completed",
+      "record_count": 1,
+      "note": "The public directory entry identifies Wasalt Real Estate Services Company."
+    }
+  ],
+  "supplemental_verified_corpus": {
+    "file": "darglobal_verified_pages.jsonl",
+    "record_count": 10,
+    "capture_date": "2026-11-19",
+    "capture_method": "Concise factual excerpts captured from publicly indexed official DarGlobal pages, with original source URLs retained.",
+    "direct_http_status": "The direct HTTP crawler received an Imperva interstitial and stored no DarGlobal records; no challenge bypass was attempted."
+  }
+}

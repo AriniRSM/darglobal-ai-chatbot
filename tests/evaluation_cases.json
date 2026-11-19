@@ -1,0 +1,56 @@
+[
+  {
+    "id": "rayana_fendi_mansions",
+    "question": "Where are the DarGlobal Mansions by Fendi Casa and what sizes are listed?",
+    "expected_answer_terms": ["Wadi Safar", "2,035", "4,623"],
+    "expected_source_domain": "darglobal.co.uk"
+  },
+  {
+    "id": "new_jeddah_announcement",
+    "question": "What did DarGlobal announce for Jeddah in November 2026?",
+    "expected_answer_terms": ["SAR 1 billion", "mixed-use", "details"],
+    "expected_source_url_contains": "new-jeddah-development-valued-at-sar-1-billion"
+  },
+  {
+    "id": "budget_recommendation_boundary",
+    "question": "My budget is US$50 million. Find a suitable property for me.",
+    "expected_answer_terms": ["current unit pricing", "live inventory"],
+    "expected_source_count": 0
+  },
+  {
+    "id": "azure_oceanfront_villas",
+    "question": "What did DarGlobal announce about Azure Oceanfront Villas?",
+    "expected_answer_terms": ["Azure Oceanfront Villas", "Oman", "FENDI Casa"],
+    "expected_source_url_contains": "darglobal-fendi-casa-announce-azure-oceanfront-villas-oman"
+  },
+  {
+    "id": "rega_rental_catalog",
+    "question": "What rental data does REGA publish?",
+    "expected_answer_terms": ["average rental", "contracts", "property"],
+    "expected_source_domain": "rega.gov.sa"
+  },
+  {
+    "id": "company_capabilities",
+    "question": "What can you answer?",
+    "expected_answer_terms": ["DarGlobal", "Wasalt", "REGA", "don’t have live"],
+    "expected_source_count": 0
+  },
+  {
+    "id": "no_current_inventory",
+    "question": "Which Wasalt listings are available today and what are their prices?",
+    "expected_answer_terms": ["not", "listing"],
+    "expected_source_domain": "quaraholding.com"
+  },
+  {
+    "id": "unsupported_mortgage_rate",
+    "question": "What are today's mortgage rates in Riyadh?",
+    "expected_answer_terms": ["couldn't find verified information"],
+    "expected_source_count": 0
+  },
+  {
+    "id": "unknown_project",
+    "question": "Give me the amenities and price for the fictional Palm Nebula Tower.",
+    "expected_answer_terms": ["couldn't find verified information"],
+    "expected_source_count": 0
+  }
+]
