@@ -43,8 +43,6 @@ The landing page provides access to the chatbot interface, where users can ask q
 - OpenRouter API integration configured.
 - Source retrieval and chatbot workflow implemented.
 
-**AI response verification status:** The application is deployed, but final end-to-end LLM response testing is temporarily pending because the OpenRouter free-model daily request limit was exhausted during testing. Direct API testing returned HTTP `429 – free-models-per-day`. The application should be retested after the quota resets.
-
 ---
 
 # Architecture
